@@ -43,8 +43,17 @@ def isWin():
         if win:
           return True
     #3 in a coloumn
+    for c in range(len(board)):
+      win = True
+      for r in range(len(board)):
+        if board[r][c] != p:
+          win = False
+          break
+      if win:
+        return True 
     
     #diagonals
+
     
     return False
 
