@@ -53,7 +53,13 @@ def isWin():
         return True 
     
     #diagonals
-
+    win = True
+    for c in range(3):
+      if board[c][c] != player:
+        win = False
+        break
+    if win:
+      return True
     
     return False
 
