@@ -24,20 +24,24 @@ def makeMove():
         player = "O"
     else:
         board[y][x] = "O"
-        palayer = "X"
+        player = "X"
 
 
 def isWin():
     global player
+    if player == "X":
+      p = "O"
+    else:
+      p = "X"
     #3 in a row
     for x in range(len(board)):
         win = True
         for y in range(len(board)):
-            if board[x][y] != player:
+            if board[x][y] != p:
                 win = False
                 break
         if win:
-            True
+          return True
     #3 in a coloumn
     
     #diagonals
@@ -54,6 +58,7 @@ def main():
     gamewon = False
     while gamewon == False:
         tictac()
+        gamewon = isWin()
     print("GAMEOVER")
         
         
